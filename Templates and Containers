@@ -1,0 +1,195 @@
+Test -Stuff
+Short answer ,peice of code output ,classic write code problems(15 lines)
+aspects of c from w6 and w7
+def review algorithm header ,its prob going to useful in test
+
+
+    What is the key benefit of using templates in C++?
+    Saves time ,prevents repetition
+    You can pass in a struct too
+
+    How does the compiler know which type to use when instantiating a function template?
+        data type in args?
+        it gets given either <class TYPE> or <typename TYPE>
+
+
+    Syntax Card:
+    Write the syntax to declare a function template named maxVal that takes two arguments of the same type.
+
+        template<class T>
+        void maxVal(T a,T b){
+            std::cout<<"Max is"<<(a>b?a:b)<<std::endl;
+        }
+
+        use with maxVal<int>(a,b)
+
+    How does a class template differ from a function template?
+        it has members that alos use the template perameters
+
+        ? template<parameter list> classDec
+        follow up on this
+
+        the args need to be explicitly declared
+
+
+    Why must we explicitly specify types for class templates but not always for function templates?
+        functions seem to be more flexible?
+        will thorw an error if you try to plug in normal vals
+
+
+    What happens during template instantiation?
+        at this point it starts to generate code
+        Compiler replaces the T with the dataType
+
+
+** T() just instantiated a val in the var
+
+    Syntax Card:
+        Write a class template Box<T> with a private member value, a constructor, and a get() method.
+        template<class T>
+        class Box{
+            T data;
+        public:
+            Box() :data(T()){}
+        }
+
+
+    What is a non-type template parameter, and when might it be useful?
+        for using an array or non sttandard sized elements
+
+    What does Item<float> mean in the context of class templates?
+        the data will be of float type
+
+    What happens if a member function in a class template is never used?
+        it doesnt get instantiated at all
+
+
+    Syntax Card:?????????
+    Write a template class FixedArray<T, N> with a member T arr[N];
+
+        *template<class T,int N>
+        FixedArray{
+            T arr[N];
+
+        public:
+            FixedArray():arr[N]????????????
+
+
+        }
+
+
+
+
+    How is template<class T> T pi = T(3.14); interpreted by the compiler?
+    nope it changes /dunno maybe review later
+
+    Can you instantiate a template using a built-in type like int or float?
+    Yes
+
+    Syntax Card:
+    Declare a variable template maxLimit<T> and initialize it to T(100)
+
+🧩 Containers
+
+    What is the difference between sequence and associative containers?
+    unknown mssed that bit
+
+    Which containers provide constant-time insertion and deletion at arbitrary positions?
+    lists
+
+    Why can’t std::list use the subscript operator like std::vector?
+
+    Syntax Card:
+    https://www.geeksforgeeks.org/list-cpp-stl/
+    Declare a std::list<int> and insert 3 values using push_back.
+
+    list<int> l;
+    l.push_back(1);
+    l.push_back(2);
+    l.push_back(3);
+
+
+    What are the differences between forward_list and list?
+    forward is single linked while List is double linked
+
+
+    What type of iterators does std::list support?
+    reg ,const ,reverse ,const reverse
+    ?they are super keen on the const?
+    lots of useful looking ones
+
+    will need to explain these in test
+    {clear() erases all elements
+    erase() deletes element at a given position
+    push_back() / pop_back() inserts / deletes element at the end,
+    insert() inserts by copying an object at a given location, emplace()
+    inserts in-place at a given location
+    swap() swap contents of list with another list }
+
+
+
+
+    What happens if you try to use list.begin() + 2? (callback to Q19)
+    it indexes forward to elements from start
+
+
+    Syntax Card:
+    Write a loop using a bidirectional iterator to print elements in a std::list<A>.
+
+    auto it = l.begin();
+
+    for(int i=0;i<2;i++){
+
+    it++;
+    (*it).show()
+
+    }
+    //for the iterators are pointers to the elements so deref
+
+
+    What’s the difference between insert() and emplace() in STL containers?
+    emplace saves time somehow
+
+
+    What function can be used to erase all elements from a list?
+    .clear()
+
+
+    Which method accesses the last element of a list?
+    .end()
+
+
+    Syntax Card:
+    Show how to insert({-1, -1}) at a given iterator position in a list.
+        l.insert(l.begin{-1,-1})
+
+
+    What are associative containers optimized for?
+
+    Name two associative containers and two unordered containers.
+
+    How does a set ensure all elements are unique and sorted?
+
+    Syntax Card:
+    Declare a set<int> in descending order using greater<int>.
+
+    What iterator types can you use with a set?
+
+    What does lower_bound() return in a set?
+
+    How would you create a new set containing elements greater than 4 from another set?
+
+    Syntax Card:
+    Insert values from ++set.lower_bound(4) to set.end() into another set.
+
+    In a map<int, string>, what happens when you use [] on a missing key?
+
+    Which is safer: map.at(key) or map[key]? Why?
+
+    What is the default sorting behavior of keys in a map?
+
+    Syntax Card:
+    Declare a map<int, string>, insert two pairs, and update one using [].
+
+
+    

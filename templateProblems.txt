@@ -1,0 +1,47 @@
+🧪 Problem 1: Template Function – Compare Any Two
+Problem:
+Write a function template called comparePrint that takes two values of the same type and prints whether the first is less than, equal to, or greater than the second.
+You must use the same function for int, float, and string.
+
+Requirements:
+    Use a single template function.
+    Demonstrate the function with all three types.
+    Output must be in the format:
+    5 < 10, 3.3 == 3.3, "Zebra" > "Apple"
+
+Difficulty: Level 2
+Concepts: function template, type inference, overload resolution
+🧪 Problem 2: Template Class – Box of Any Type
+
+Problem:
+Create a class template Box<T> that stores one value of type T.
+It should support:
+
+    a constructor to initialize the value,
+
+    a get() method to retrieve it,
+
+    a compare(Box<T>) method that returns true if the values are equal.
+
+Write a main() that creates Box<int>, Box<string>, and Box<float> and compares them.
+
+Difficulty: Level 3
+Concepts: class template, member functions, equality comparison
+🧪 Problem 3: Non-Type Template Parameter – Fixed Size Array
+
+Problem:
+Create a class template called FixedArray<T, N> that stores an array of type T with size N.
+Include:
+
+    a set(int index, T value) method
+
+    a get(int index) method
+
+    a method sum() that returns the sum of all elements (assume T is numeric)
+
+Demonstrate the class with FixedArray<int, 5>.
+
+Bonus: Try instantiating it with a type that doesn’t support + and see what happens.
+
+Difficulty: Level 4
+Concepts: class template, non-type parameters, type assumptions
